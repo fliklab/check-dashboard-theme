@@ -188,6 +188,16 @@ customCSS: |
     box-shadow: none !important;
   }
 
+  [data-theme="check"] #app-sidebar nav a > span.absolute,
+  [data-theme="check"] #app-sidebar nav a > span.pointer-events-none,
+  [data-theme="check"] #app-sidebar nav a > span[class*="group-hover"],
+  [data-theme="check"] #app-sidebar nav a > span[class*="bg-midground"] {
+    display: none !important;
+    opacity: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
   [data-theme="check"] .bg-card,
   [data-theme="check"] [class*="bg-card"],
   [data-theme="check"] [class*="bg-background-base/40"],
@@ -448,6 +458,52 @@ customCSS: |
     background: #1e3a8a !important;
     color: #ffffff !important;
     text-shadow: none !important;
+  }
+
+  /* Shape corrections: table/list rows and segmented controls are grid/cell structures, not pills. */
+  [data-theme="check"] main div[class*="overflow-hidden"]:has(> .overflow-x-auto),
+  [data-theme="check"] main div[class*="bg-background-base/80"]:has(> .overflow-x-auto) {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  [data-theme="check"] main div[class*="grid"][class*="border-b"],
+  [data-theme="check"] main div[class*="grid"][class*="last:border-b-0"] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  [data-theme="check"] main div[class*="grid"][class*="border-b"]:hover,
+  [data-theme="check"] main div[class*="grid"][class*="last:border-b-0"]:hover {
+    border-radius: 0 !important;
+  }
+
+  [data-theme="check"] [role="radiogroup"] {
+    border-radius: 0 !important;
+    overflow: hidden !important;
+  }
+
+  [data-theme="check"] [role="radiogroup"] [role="radio"] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  [data-theme="check"] [role="radiogroup"] [role="radio"][aria-checked="true"] {
+    border-radius: 0 !important;
+  }
+
+  [data-theme="check"] [role="radiogroup"] [role="radio"][aria-checked="true"],
+  [data-theme="check"] [role="radiogroup"] [role="radio"][aria-checked="true"]:hover,
+  [data-theme="check"] [role="radiogroup"] [role="radio"][aria-checked="true"]:focus-visible {
+    background: #111827 !important;
+    color: #ffffff !important;
+    border-color: #111827 !important;
+  }
+
+  [data-theme="check"] [role="radiogroup"] [role="radio"][aria-checked="false"]:hover {
+    background: #eef2f7 !important;
+    color: #334155 !important;
+    border-color: var(--check-border-strong) !important;
   }
 
   @media (max-width: 1023px) {
