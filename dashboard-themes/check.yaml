@@ -640,3 +640,583 @@ customCSS: |
       color: var(--check-text) !important;
     }
   }
+
+  /* Compatibility fallback for dashboard builds that inject active user-theme CSS without setting data-theme="check" on <html>. */
+  html:not([data-theme]) {
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --font-mondwest: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --font-rules-expanded: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --font-rules-compressed: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --theme-font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --theme-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --check-canvas: #f6f8fb;
+    --check-canvas-soft: #f8fafc;
+    --check-surface: #ffffff;
+    --check-surface-raised: rgba(255, 255, 255, 0.96);
+    --check-surface-muted: #f1f5f9;
+    --check-border: #d8e1ec;
+    --check-border-strong: #c7d2df;
+    --check-text: #111827;
+    --check-text-soft: #374151;
+    --check-muted: #64748b;
+    --check-primary: #2563eb;
+    --check-primary-soft: #dbeafe;
+    --check-primary-softer: #eff6ff;
+    --check-success: #166534;
+    --check-success-soft: #dcfce7;
+    --check-warning: #92400e;
+    --check-warning-soft: #ffedd5;
+    --check-danger: #b91c1c;
+    --check-danger-soft: #fee2e2;
+    --check-radius-card: 0.75rem;
+    --check-radius-control: 0.625rem;
+    --check-radius-pill: 999px;
+    --check-shadow-hairline: 0 1px 0 rgba(15, 23, 42, 0.04);
+    --check-shadow-card: 0 1px 2px rgba(15, 23, 42, 0.05);
+    background: var(--check-canvas) !important;
+    color: var(--check-text) !important;
+  }
+
+  html:not([data-theme]),
+  html:not([data-theme]) body,
+  html:not([data-theme]) #root {
+    background: linear-gradient(180deg, #f8fafc 0%, var(--check-canvas) 46%, #f2f6fb 100%) !important;
+    color: var(--check-text) !important;
+  }
+
+  html:not([data-theme]) *,
+  html:not([data-theme]) *::before,
+  html:not([data-theme]) *::after {
+    letter-spacing: normal !important;
+    font-stretch: normal !important;
+    font-variant-ligatures: normal !important;
+    font-variant-caps: normal !important;
+    text-rendering: optimizeLegibility;
+  }
+
+  html:not([data-theme]),
+  html:not([data-theme]) body,
+  html:not([data-theme]) #root,
+  html:not([data-theme]) #app-sidebar,
+  html:not([data-theme]) main,
+  html:not([data-theme]) .font-sans,
+  html:not([data-theme]) .font-mondwest,
+  html:not([data-theme]) .font-expanded,
+  html:not([data-theme]) .font-compressed,
+  html:not([data-theme]) .text-display,
+  html:not([data-theme]) :is(h1, h2, h3, h4, h5, h6, p, a, button, input, select, textarea, label, summary, li, span, div):not(pre *):not(code):not(code *):not(kbd):not(samp) {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+    font-stretch: normal !important;
+    letter-spacing: normal !important;
+    text-transform: none;
+  }
+
+  html:not([data-theme]) :is(.font-mono, .font-courier):not(pre):not(pre *):not(code):not(code *):not(kbd):not(samp),
+  html:not([data-theme]) :is(button, a, summary, select, input, textarea)[class*="font-mono"] {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+    letter-spacing: normal !important;
+  }
+
+  html:not([data-theme]) code,
+  html:not([data-theme]) pre,
+  html:not([data-theme]) pre *,
+  html:not([data-theme]) kbd,
+  html:not([data-theme]) samp {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
+  }
+
+  html:not([data-theme]) header,
+  html:not([data-theme]) .sticky.top-0 {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-bottom-color: var(--check-border) !important;
+    box-shadow: none !important;
+    backdrop-filter: saturate(1.12) blur(14px) !important;
+  }
+
+  html:not([data-theme]) header h1,
+  html:not([data-theme]) header .text-midground,
+  html:not([data-theme]) #app-sidebar .text-midground,
+  html:not([data-theme]) #app-sidebar .text-foreground,
+  html:not([data-theme]) #app-sidebar .text-background,
+  html:not([data-theme]) #app-sidebar [class*="text-midground"],
+  html:not([data-theme]) #app-sidebar [class*="text-foreground"],
+  html:not([data-theme]) #app-sidebar [class*="text-background"] {
+    color: var(--check-text) !important;
+    mix-blend-mode: normal !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+  }
+
+  html:not([data-theme]) #app-sidebar > div:first-child,
+  html:not([data-theme]) #app-sidebar > div:first-child *,
+  html:not([data-theme]) #app-sidebar span[class*="uppercase"],
+  html:not([data-theme]) #app-sidebar span[class*="text-"][class*="uppercase"] {
+    color: #111827 !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+    text-shadow: none !important;
+    -webkit-text-fill-color: #111827 !important;
+  }
+
+  /* Critical readability fixes for portable CHECK installs. */
+  html:not([data-theme]) #app-sidebar > div:first-child span,
+  html:not([data-theme]) #app-sidebar > div:first-child [class*="text-"],
+  html:not([data-theme]) #app-sidebar [aria-label*="Hermes"],
+  html:not([data-theme]) #app-sidebar [aria-label*="Agent"] {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
+    text-shadow: none !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+    font-size: 1.125rem !important;
+    font-weight: 800 !important;
+    line-height: 0.98 !important;
+    letter-spacing: 0.015em !important;
+    text-transform: uppercase !important;
+  }
+
+  html:not([data-theme]) main :is(span, code, a, button)[class*="bg-success"],
+  html:not([data-theme]) main :is(span, code, a, button)[class*="bg-warning"],
+  html:not([data-theme]) main :is(span, code, a, button)[class*="bg-primary"],
+  html:not([data-theme]) main :is(span, code, a, button)[class*="bg-blue"],
+  html:not([data-theme]) main :is(span, code, a, button)[class*="bg-purple"],
+  html:not([data-theme]) main :is(span, code, a, button)[class*="bg-muted"],
+  html:not([data-theme]) main :is(span, code, a, button)[class*="border-success"],
+  html:not([data-theme]) main :is(span, code, a, button)[class*="border-warning"],
+  html:not([data-theme]) main :is(span, code, a, button)[class*="border-amber"],
+  html:not([data-theme]) main :is(span, code, a, button)[class*="border-yellow"],
+  html:not([data-theme]) main :is(span, code, a, button)[class*="border-midground"],
+  html:not([data-theme]) main [class*="badge"],
+  html:not([data-theme]) main [class*="Badge"] {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+    font-stretch: normal !important;
+    font-variant: normal !important;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+    line-height: 1.25 !important;
+    min-width: auto !important;
+    white-space: nowrap !important;
+  }
+
+  html:not([data-theme]) main :is(span, code, a)[class*="bg-success"],
+  html:not([data-theme]) main :is(span, code, a)[class*="border-success"] {
+    background: #ecfdf5 !important;
+    border: 1px solid #a7f3d0 !important;
+    color: #047857 !important;
+  }
+
+  html:not([data-theme]) main :is(span, code, a)[class*="bg-warning"],
+  html:not([data-theme]) main :is(span, code, a)[class*="bg-amber"],
+  html:not([data-theme]) main :is(span, code, a)[class*="bg-yellow"],
+  html:not([data-theme]) main :is(span, code, a)[class*="border-warning"],
+  html:not([data-theme]) main :is(span, code, a)[class*="border-amber"],
+  html:not([data-theme]) main :is(span, code, a)[class*="border-yellow"] {
+    background: #fff7ed !important;
+    border: 1px solid #fed7aa !important;
+    color: #9a3412 !important;
+  }
+
+  html:not([data-theme]) main :is(code, a, span).font-mono,
+  html:not([data-theme]) main :is(code, a, span).font-courier,
+  html:not([data-theme]) main :is(code, a, span)[class*="font-mono"],
+  html:not([data-theme]) main :is(code, a, span)[class*="font-courier"],
+  html:not([data-theme]) main :is(code, a, span)[class*="bg-primary/10"],
+  html:not([data-theme]) main :is(code, a, span)[class*="bg-sky"],
+  html:not([data-theme]) main :is(code, a, span)[class*="bg-cyan"] {
+    background: #eef4ff !important;
+    border: 1px solid #bfdbfe !important;
+    border-radius: 0.375rem !important;
+    color: #1e3a8a !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+    font-size: 0.875rem !important;
+    font-stretch: normal !important;
+    font-weight: 600 !important;
+    letter-spacing: normal !important;
+    line-height: 1.35 !important;
+    padding: 0.075rem 0.35rem !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    word-break: break-word !important;
+  }
+
+  html:not([data-theme]) main,
+  html:not([data-theme]) main > div {
+    background: transparent !important;
+  }
+
+  html:not([data-theme]) #app-sidebar {
+    background: rgba(255, 255, 255, 0.97) !important;
+    border-right: 1px solid var(--check-border) !important;
+    color: var(--check-text) !important;
+    box-shadow: none !important;
+    backdrop-filter: saturate(1.08) blur(12px) !important;
+  }
+
+  html:not([data-theme]) #app-sidebar nav a,
+  html:not([data-theme]) #app-sidebar a,
+  html:not([data-theme]) #app-sidebar button,
+  html:not([data-theme]) #app-sidebar select {
+    border-radius: 0.875rem !important;
+    color: var(--check-text-soft) !important;
+    font-weight: 700 !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) #app-sidebar nav a {
+    border-color: transparent !important;
+    outline: none !important;
+    transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease !important;
+  }
+
+  html:not([data-theme]) #app-sidebar nav a:hover {
+    background: #eef2f7 !important;
+    color: #1f2937 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) #app-sidebar nav a[aria-current="page"],
+  html:not([data-theme]) #app-sidebar nav a[aria-selected="true"],
+  html:not([data-theme]) #app-sidebar nav a[class*="bg-"] {
+    background: #e6eaf0 !important;
+    color: #1f2937 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) #app-sidebar nav a > span.absolute,
+  html:not([data-theme]) #app-sidebar nav a > span.pointer-events-none,
+  html:not([data-theme]) #app-sidebar nav a > span[class*="group-hover"],
+  html:not([data-theme]) #app-sidebar nav a > span[class*="bg-midground"] {
+    display: none !important;
+    opacity: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) .bg-card,
+  html:not([data-theme]) [class*="bg-card"],
+  html:not([data-theme]) [class*="bg-background-base/40"],
+  html:not([data-theme]) [class*="bg-background-base/50"],
+  html:not([data-theme]) [class*="bg-background-base/80"],
+  html:not([data-theme]) [class*="border-border"],
+  html:not([data-theme]) [class*="border-muted"] {
+    background: var(--check-surface-raised) !important;
+    border-color: var(--check-border) !important;
+    border-radius: var(--check-radius-card) !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) :is(.bg-card, [class*="bg-card"]):hover {
+    box-shadow: var(--check-shadow-card) !important;
+  }
+
+  html:not([data-theme]) input,
+  html:not([data-theme]) textarea,
+  html:not([data-theme]) select {
+    background: #ffffff !important;
+    border-color: var(--check-border-strong) !important;
+    border-radius: var(--check-radius-control) !important;
+    color: var(--check-text) !important;
+    box-shadow: var(--check-shadow-hairline) !important;
+  }
+
+  html:not([data-theme]) input::placeholder,
+  html:not([data-theme]) textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  html:not([data-theme]) :is(
+    a[href],
+    button:not(:disabled),
+    select:not(:disabled),
+    summary,
+    [role="button"],
+    [role="link"],
+    [role="menuitem"],
+    [role="option"],
+    [role="tab"],
+    [role="radio"],
+    [role="checkbox"],
+    [role="switch"],
+    [aria-controls],
+    [aria-expanded],
+    [aria-pressed],
+    [aria-selected],
+    .cursor-pointer
+  ) {
+    cursor: pointer !important;
+  }
+
+  html:not([data-theme]) :is(button:disabled, [aria-disabled="true"]) {
+    cursor: not-allowed !important;
+    opacity: 0.58 !important;
+  }
+
+  html:not([data-theme]) :is(button, [role="button"], [role="tab"], [role="radio"], select, input, textarea) {
+    border-radius: var(--check-radius-control) !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  html:not([data-theme]) :is(button, [role="button"], [role="tab"], [role="radio"]):not(:disabled) {
+    transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, transform 80ms ease !important;
+  }
+
+  html:not([data-theme]) :is(button, [role="button"], [role="tab"], [role="radio"]):hover:not(:disabled) {
+    background-color: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  html:not([data-theme]) :is(button, [role="button"], [role="tab"], [role="radio"]):active:not(:disabled) {
+    transform: translateY(1px) !important;
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.10) !important;
+  }
+
+  html:not([data-theme]) :is(button, [role="button"], [role="tab"], [role="radio"]):focus-visible:not(:disabled),
+  html:not([data-theme]) :is(a, input, textarea, select):focus-visible {
+    outline: 2px solid var(--check-primary) !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) button > .arc-border,
+  html:not([data-theme]) button > .arc-border::before,
+  html:not([data-theme]) [role="button"] > .arc-border,
+  html:not([data-theme]) [role="button"] > .arc-border::before {
+    display: none !important;
+    opacity: 0 !important;
+    animation: none !important;
+    box-shadow: none !important;
+    background: none !important;
+  }
+
+  html:not([data-theme]) button:has(> .arc-border),
+  html:not([data-theme]) [role="button"]:has(> .arc-border) {
+    background: #ffffff !important;
+    border: 1px solid var(--check-border) !important;
+    color: var(--check-text) !important;
+  }
+
+  html:not([data-theme]) [role="switch"],
+  html:not([data-theme]) button[aria-checked] {
+    border-radius: var(--check-radius-pill) !important;
+  }
+
+  html:not([data-theme]) [role="switch"] > span,
+  html:not([data-theme]) button[aria-checked] > span {
+    border-radius: var(--check-radius-pill) !important;
+    aspect-ratio: 1 / 1 !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.16) !important;
+  }
+
+  html:not([data-theme]) [class*="text-muted"],
+  html:not([data-theme]) [class*="text-text-secondary"],
+  html:not([data-theme]) [class*="text-text-tertiary"] {
+    color: var(--check-muted) !important;
+  }
+
+  html:not([data-theme]) .text-success:not([class*="bg-success"]),
+  html:not([data-theme]) [class*="text-success"]:not([class*="bg-success"]) {
+    color: var(--check-success) !important;
+  }
+
+  html:not([data-theme]) .text-warning,
+  html:not([data-theme]) [class*="text-warning"],
+  html:not([data-theme]) [class*="text-amber"],
+  html:not([data-theme]) [class*="text-yellow"] {
+    color: var(--check-warning) !important;
+  }
+
+  html:not([data-theme]) .border-warning,
+  html:not([data-theme]) [class*="border-warning"],
+  html:not([data-theme]) [class*="border-amber"],
+  html:not([data-theme]) [class*="border-yellow"] {
+    border-color: #fdba74 !important;
+  }
+
+  html:not([data-theme]) .bg-warning,
+  html:not([data-theme]) [class*="bg-warning"],
+  html:not([data-theme]) [class*="bg-amber"],
+  html:not([data-theme]) [class*="bg-yellow"] {
+    background: #fff7ed !important;
+  }
+
+  html:not([data-theme]) span[class*="bg-success"],
+  html:not([data-theme]) span[class*="bg-warning"],
+  html:not([data-theme]) span[class*="bg-primary"],
+  html:not([data-theme]) span[class*="bg-blue"],
+  html:not([data-theme]) span[class*="bg-purple"],
+  html:not([data-theme]) span[class*="bg-muted"],
+  html:not([data-theme]) span[class*="border-midground"],
+  html:not([data-theme]) [class*="badge"],
+  html:not([data-theme]) [class*="Badge"] {
+    border-radius: var(--check-radius-pill) !important;
+    padding: 0.25rem 0.625rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  html:not([data-theme]) span[class*="bg-success"] {
+    background: var(--check-success-soft) !important;
+    border: 1px solid #86efac !important;
+    color: #14532d !important;
+  }
+
+  html:not([data-theme]) span[class*="bg-warning"] {
+    background: var(--check-warning-soft) !important;
+    border: 1px solid #fdba74 !important;
+    color: #9a3412 !important;
+  }
+
+  html:not([data-theme]) span[class*="bg-primary"],
+  html:not([data-theme]) span[class*="bg-blue"] {
+    background: var(--check-primary-soft) !important;
+    border: 1px solid #bfdbfe !important;
+    color: #1e3a8a !important;
+  }
+
+  html:not([data-theme]) span[class*="bg-purple"] {
+    background: #f3e8ff !important;
+    border: 1px solid #e9d5ff !important;
+    color: #581c87 !important;
+  }
+
+  html:not([data-theme]) span[class*="bg-muted"],
+  html:not([data-theme]) span[class*="border-midground"] {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+  }
+
+  html:not([data-theme]) code:not(pre code),
+  html:not([data-theme]) .font-courier.truncate {
+    background: #f3f6fa !important;
+    border: 1px solid var(--check-border) !important;
+    border-radius: 0.5rem !important;
+    color: #0f172a !important;
+    opacity: 1 !important;
+    padding: 0.125rem 0.5rem !important;
+    font-weight: 600 !important;
+    line-height: 1.45 !important;
+  }
+
+  html:not([data-theme]) input.font-mono,
+  html:not([data-theme]) textarea.font-mono {
+    background: #f8fafc !important;
+    border-color: var(--check-border) !important;
+    color: var(--check-text) !important;
+  }
+
+  html:not([data-theme]) [class*="bg-primary/10"],
+  html:not([data-theme]) [class*="bg-sky"],
+  html:not([data-theme]) [class*="bg-cyan"] {
+    background: #f8fafc !important;
+    border-color: var(--check-border) !important;
+    color: var(--check-text) !important;
+  }
+
+  html:not([data-theme]) [class*="grid"] button[class*="font-mono"][class*="text-left"] {
+    border-radius: 0.5rem !important;
+    padding: 0.375rem 0.5rem !important;
+    margin-left: -0.5rem !important;
+  }
+
+  html:not([data-theme]) [class*="grid"] button[class*="font-mono"][class*="text-left"]:hover {
+    background: var(--check-primary-softer) !important;
+    color: #1d4ed8 !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) table,
+  html:not([data-theme]) thead,
+  html:not([data-theme]) tbody,
+  html:not([data-theme]) tr {
+    border-color: var(--check-border) !important;
+  }
+
+  html:not([data-theme]) th {
+    color: var(--check-muted) !important;
+    font-weight: 700 !important;
+  }
+
+  html:not([data-theme]) ::selection {
+    background: #1e3a8a !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+  }
+
+  html:not([data-theme]) ::-moz-selection {
+    background: #1e3a8a !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+  }
+
+  /* Shape corrections: table/list rows and segmented controls are grid/cell structures, not pills. */
+  html:not([data-theme]) main div[class*="overflow-hidden"]:has(> .overflow-x-auto),
+  html:not([data-theme]) main div[class*="bg-background-base/80"]:has(> .overflow-x-auto) {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) main div[class*="grid"][class*="border-b"],
+  html:not([data-theme]) main div[class*="grid"][class*="last:border-b-0"] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) main div[class*="grid"][class*="border-b"]:hover,
+  html:not([data-theme]) main div[class*="grid"][class*="last:border-b-0"]:hover {
+    border-radius: 0 !important;
+  }
+
+  html:not([data-theme]) [role="radiogroup"] {
+    border-radius: 0 !important;
+    overflow: hidden !important;
+  }
+
+  html:not([data-theme]) [role="radiogroup"] [role="radio"] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html:not([data-theme]) [role="radiogroup"] [role="radio"][aria-checked="true"] {
+    border-radius: 0 !important;
+  }
+
+  html:not([data-theme]) [role="radiogroup"] [role="radio"][aria-checked="true"],
+  html:not([data-theme]) [role="radiogroup"] [role="radio"][aria-checked="true"]:hover,
+  html:not([data-theme]) [role="radiogroup"] [role="radio"][aria-checked="true"]:focus-visible {
+    background: #111827 !important;
+    color: #ffffff !important;
+    border-color: #111827 !important;
+  }
+
+  html:not([data-theme]) [role="radiogroup"] [role="radio"][aria-checked="false"]:hover {
+    background: #eef2f7 !important;
+    color: #334155 !important;
+    border-color: var(--check-border-strong) !important;
+  }
+
+  @media (max-width: 1023px) {
+    html:not([data-theme]) #app-sidebar {
+      background: #ffffff !important;
+      border-color: var(--check-border) !important;
+      color: var(--check-text) !important;
+      backdrop-filter: none !important;
+    }
+
+    html:not([data-theme]) #app-sidebar nav a,
+    html:not([data-theme]) #app-sidebar button,
+    html:not([data-theme]) #app-sidebar select,
+    html:not([data-theme]) #app-sidebar [role="status"] {
+      color: var(--check-text) !important;
+    }
+  }
+
