@@ -1389,3 +1389,18 @@ customCSS: |
     box-shadow: 0 8px 18px rgba(15, 23, 42, 0.10) !important;
   }
 
+  /* CHECK sidebar spacing: keep active/hover fills inset from both sidebar edges. */
+  :is([data-theme="check"], html:not([data-theme])) #app-sidebar nav a {
+    width: calc(100% - 1rem) !important;
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) #app-sidebar nav a:hover,
+  :is([data-theme="check"], html:not([data-theme])) #app-sidebar nav a[aria-current="page"],
+  :is([data-theme="check"], html:not([data-theme])) #app-sidebar nav a[aria-selected="true"],
+  :is([data-theme="check"], html:not([data-theme])) #app-sidebar nav a[class*="bg-"] {
+    background-clip: padding-box !important;
+  }
+
