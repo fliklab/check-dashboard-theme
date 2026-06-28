@@ -1220,3 +1220,172 @@ customCSS: |
     }
   }
 
+  /* CHECK import QA fixes: square structural tables/segments, circular switches, quieter channel status. */
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, button)[class*="grid"][class*="grid-cols-"][class*="border-b"],
+  :is([data-theme="check"], html:not([data-theme])) main .overflow-x-auto > :is(div, button)[class*="grid"],
+  :is([data-theme="check"], html:not([data-theme])) main .overflow-x-auto :is(button, div)[class*="grid"][class*="hover:bg"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, button)[class*="min-w-[42rem]"] {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main .overflow-x-auto :is(button, span, div)[class*="font-mono"][class*="text-foreground"],
+  :is([data-theme="check"], html:not([data-theme])) main .overflow-x-auto :is(button, span, div)[class*="font-mono"][class*="text-text-secondary"],
+  :is([data-theme="check"], html:not([data-theme])) main .overflow-x-auto :is(button, span, div)[class*="flex"][class*="items-center"][class*="gap-2"] {
+    background: transparent !important;
+    border-color: transparent !important;
+    border-width: 0 !important;
+    border-radius: 0 !important;
+    color: var(--check-text) !important;
+    font-size: inherit !important;
+    font-weight: 500 !important;
+    padding: 0 !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main .overflow-x-auto :is(button, span, div)[class*="font-mono"][class*="text-text-secondary"] {
+    color: var(--check-muted) !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, section)[class*="inline-flex"][class*="border"],
+  :is([data-theme="check"], html:not([data-theme])) main [role="radiogroup"],
+  :is([data-theme="check"], html:not([data-theme])) main [role="tablist"] {
+    border-radius: 0 !important;
+    overflow: hidden !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, section)[class*="inline-flex"][class*="border"] > :is(button, [role="tab"], [role="radio"]),
+  :is([data-theme="check"], html:not([data-theme])) main [role="radiogroup"] > :is(button, [role="radio"]),
+  :is([data-theme="check"], html:not([data-theme])) main [role="tablist"] > :is(button, [role="tab"]) {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main :is(button, [role="switch"])[role="switch"],
+  :is([data-theme="check"], html:not([data-theme])) main button[aria-checked="true"],
+  :is([data-theme="check"], html:not([data-theme])) main button[aria-checked="false"] {
+    border-radius: 999px !important;
+    overflow: hidden !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main :is(button, [role="switch"])[role="switch"] > :is(span, div),
+  :is([data-theme="check"], html:not([data-theme])) main button[aria-checked="true"] > :is(span, div),
+  :is([data-theme="check"], html:not([data-theme])) main button[aria-checked="false"] > :is(span, div) {
+    border-radius: 999px !important;
+    aspect-ratio: 1 / 1 !important;
+    min-width: 0 !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.18) !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main :is(span, div)[class*="text-success"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(span, div)[class*="text-warning"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(span, div)[class*="text-destructive"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(span, div)[class*="bg-success"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(span, div)[class*="bg-warning"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(span, div)[class*="bg-destructive"] {
+    font-size: 0.8125rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: normal !important;
+    font-weight: 600 !important;
+    padding: 0.125rem 0.45rem !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, article, section)[class*="ring-primary"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, article, section)[class*="ring-"] {
+    --tw-ring-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, section)[class*="border-b"][class*="pb-3"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, section)[class*="border-b"][class*="p-4"] {
+    border-radius: 0 !important;
+  }
+
+  /* CHECK import QA fixes v2: remove hover glow, readable selection, visible inline dropdowns. */
+  :is([data-theme="check"], html:not([data-theme])) ::selection {
+    background: #bfdbfe !important;
+    color: #0f172a !important;
+    text-shadow: none !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) ::-moz-selection {
+    background: #bfdbfe !important;
+    color: #0f172a !important;
+    text-shadow: none !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) :is(.arc-border, .arc-border::before, .arc-border::after),
+  :is([data-theme="check"], html:not([data-theme])) :is(button, [role="button"], a, [role="tab"], [role="radio"], [role="switch"]) :is(.arc-border, .arc-border::before, .arc-border::after),
+  :is([data-theme="check"], html:not([data-theme])) :is([class*="group-hover"], [class*="hover:shadow"], [class*="shadow-"]):is(:hover, :focus, :focus-visible, :active) {
+    animation: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    opacity: 0 !important;
+    text-shadow: none !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) :is(button, [role="button"], a[href], [role="tab"], [role="radio"], [role="switch"], summary, select):is(:hover, :focus, :focus-visible, :active):not(:disabled) {
+    box-shadow: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+    background-image: none !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) :is(button, [role="button"], [role="tab"], [role="radio"], [role="switch"], select):hover:not(:disabled) {
+    background-color: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) a[href]:hover {
+    background-color: #eef2f7 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) :is(button, [role="button"], a[href], [role="tab"], [role="radio"], [role="switch"]):is(:hover, :focus, :focus-visible, :active)::before,
+  :is([data-theme="check"], html:not([data-theme])) :is(button, [role="button"], a[href], [role="tab"], [role="radio"], [role="switch"]):is(:hover, :focus, :focus-visible, :active)::after {
+    animation: none !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    opacity: 0 !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) :is(.shadow, .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl, .shadow-2xl, [class*="shadow-"]):is(:hover, :focus, :focus-visible, :active) {
+    --tw-shadow: 0 0 #0000 !important;
+    --tw-shadow-colored: 0 0 #0000 !important;
+    box-shadow: none !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, section, article)[class*="border"][class*="bg-background-base"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, section, article)[class*="bg-card"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, section, article)[class*="bg-background/40"] {
+    isolation: auto !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, section, article)[class*="py-0"][class*="bg-background-base"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, section, article)[class*="px-3"][class*="py-2"][class*="bg-background-base"],
+  :is([data-theme="check"], html:not([data-theme])) main :is(div, section, article):has(> .relative.ml-auto) {
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 20 !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main .relative.ml-auto,
+  :is([data-theme="check"], html:not([data-theme])) main .relative:has(> button[aria-haspopup]),
+  :is([data-theme="check"], html:not([data-theme])) main .relative:has(> button[aria-expanded]) {
+    overflow: visible !important;
+    z-index: 60 !important;
+  }
+
+  :is([data-theme="check"], html:not([data-theme])) main :is([role="listbox"], [role="menu"], [data-radix-popper-content-wrapper], [data-state="open"]),
+  :is([data-theme="check"], html:not([data-theme])) main .relative > :is(div, ul)[class*="absolute"],
+  :is([data-theme="check"], html:not([data-theme])) main .relative > :is(div, ul)[class*="top-full"] {
+    z-index: 9999 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.10) !important;
+  }
+
