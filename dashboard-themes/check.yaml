@@ -1,0 +1,467 @@
+name: check
+label: CHECK
+description: Portable CHECK YAML theme — modern restrained SaaS dashboard implemented with tokens plus inline customCSS only.
+palette:
+  background:
+    hex: "#f6f8fb"
+    alpha: 1
+  midground:
+    hex: "#111827"
+    alpha: 1
+  foreground:
+    hex: "#ffffff"
+    alpha: 0
+  warmGlow: "rgba(255, 255, 255, 0)"
+  noiseOpacity: 0
+typography:
+  fontSans: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"
+  fontMono: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
+  fontDisplay: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"
+  baseSize: "15px"
+  lineHeight: "1.5"
+  letterSpacing: "0"
+layout:
+  radius: "0.75rem"
+  density: comfortable
+layoutVariant: standard
+terminalBackground: "#111827"
+componentStyles:
+  backdrop:
+    bgBlendMode: "normal"
+    fillerBlendMode: "normal"
+    fillerOpacity: "0"
+  header:
+    background: "rgba(255, 255, 255, 0.92)"
+    borderColor: "#dde5ef"
+    boxShadow: "none"
+  sidebar:
+    background: "rgba(255, 255, 255, 0.97)"
+    borderColor: "#e5eaf1"
+    boxShadow: "none"
+  card:
+    background: "rgba(255, 255, 255, 0.96)"
+    borderColor: "#e1e7ef"
+    boxShadow: "none"
+colorOverrides:
+  card: "#ffffff"
+  cardForeground: "#111827"
+  popover: "#ffffff"
+  popoverForeground: "#111827"
+  primary: "#2563eb"
+  primaryForeground: "#ffffff"
+  secondary: "#f3f6fa"
+  secondaryForeground: "#111827"
+  muted: "#eef2f7"
+  mutedForeground: "#4b5563"
+  accent: "#e8edf4"
+  accentForeground: "#111827"
+  destructive: "#dc2626"
+  destructiveForeground: "#ffffff"
+  success: "#15803d"
+  warning: "#b45309"
+  border: "#d4dde8"
+  input: "#d4dde8"
+  ring: "#2563eb"
+customCSS: |
+  [data-theme="check"] {
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --font-mondwest: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --font-rules-expanded: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --font-rules-compressed: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --theme-font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --theme-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    --check-canvas: #f6f8fb;
+    --check-canvas-soft: #f8fafc;
+    --check-surface: #ffffff;
+    --check-surface-raised: rgba(255, 255, 255, 0.96);
+    --check-surface-muted: #f1f5f9;
+    --check-border: #d8e1ec;
+    --check-border-strong: #c7d2df;
+    --check-text: #111827;
+    --check-text-soft: #374151;
+    --check-muted: #64748b;
+    --check-primary: #2563eb;
+    --check-primary-soft: #dbeafe;
+    --check-primary-softer: #eff6ff;
+    --check-success: #166534;
+    --check-success-soft: #dcfce7;
+    --check-warning: #92400e;
+    --check-warning-soft: #ffedd5;
+    --check-danger: #b91c1c;
+    --check-danger-soft: #fee2e2;
+    --check-radius-card: 0.75rem;
+    --check-radius-control: 0.625rem;
+    --check-radius-pill: 999px;
+    --check-shadow-hairline: 0 1px 0 rgba(15, 23, 42, 0.04);
+    --check-shadow-card: 0 1px 2px rgba(15, 23, 42, 0.05);
+    background: var(--check-canvas) !important;
+    color: var(--check-text) !important;
+  }
+
+  [data-theme="check"],
+  [data-theme="check"] body,
+  [data-theme="check"] #root {
+    background: linear-gradient(180deg, #f8fafc 0%, var(--check-canvas) 46%, #f2f6fb 100%) !important;
+    color: var(--check-text) !important;
+  }
+
+  [data-theme="check"] *,
+  [data-theme="check"] *::before,
+  [data-theme="check"] *::after {
+    letter-spacing: normal !important;
+    font-stretch: normal !important;
+    font-variant-ligatures: normal !important;
+    font-variant-caps: normal !important;
+    text-rendering: optimizeLegibility;
+  }
+
+  [data-theme="check"] body,
+  [data-theme="check"] .font-sans,
+  [data-theme="check"] .font-mondwest,
+  [data-theme="check"] .font-expanded,
+  [data-theme="check"] .font-compressed,
+  [data-theme="check"] .text-display {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif !important;
+    font-stretch: normal !important;
+    letter-spacing: normal !important;
+    text-transform: none;
+  }
+
+  [data-theme="check"] header,
+  [data-theme="check"] .sticky.top-0 {
+    background: rgba(255, 255, 255, 0.92) !important;
+    border-bottom-color: var(--check-border) !important;
+    box-shadow: none !important;
+    backdrop-filter: saturate(1.12) blur(14px) !important;
+  }
+
+  [data-theme="check"] header h1,
+  [data-theme="check"] header .text-midground,
+  [data-theme="check"] #app-sidebar .text-midground {
+    color: var(--check-text) !important;
+    mix-blend-mode: normal !important;
+    font-weight: 700 !important;
+  }
+
+  [data-theme="check"] main,
+  [data-theme="check"] main > div {
+    background: transparent !important;
+  }
+
+  [data-theme="check"] #app-sidebar {
+    background: rgba(255, 255, 255, 0.97) !important;
+    border-right: 1px solid var(--check-border) !important;
+    color: var(--check-text) !important;
+    box-shadow: none !important;
+    backdrop-filter: saturate(1.08) blur(12px) !important;
+  }
+
+  [data-theme="check"] #app-sidebar nav a,
+  [data-theme="check"] #app-sidebar a,
+  [data-theme="check"] #app-sidebar button,
+  [data-theme="check"] #app-sidebar select {
+    border-radius: 0.875rem !important;
+    color: var(--check-text-soft) !important;
+    font-weight: 700 !important;
+    box-shadow: none !important;
+  }
+
+  [data-theme="check"] #app-sidebar nav a {
+    border-color: transparent !important;
+    outline: none !important;
+    transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease !important;
+  }
+
+  [data-theme="check"] #app-sidebar nav a:hover {
+    background: #eef2f7 !important;
+    color: #1f2937 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  [data-theme="check"] #app-sidebar nav a[aria-current="page"],
+  [data-theme="check"] #app-sidebar nav a[aria-selected="true"],
+  [data-theme="check"] #app-sidebar nav a[class*="bg-"] {
+    background: #e6eaf0 !important;
+    color: #1f2937 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  [data-theme="check"] .bg-card,
+  [data-theme="check"] [class*="bg-card"],
+  [data-theme="check"] [class*="bg-background-base/40"],
+  [data-theme="check"] [class*="bg-background-base/50"],
+  [data-theme="check"] [class*="bg-background-base/80"],
+  [data-theme="check"] [class*="border-border"],
+  [data-theme="check"] [class*="border-muted"] {
+    background: var(--check-surface-raised) !important;
+    border-color: var(--check-border) !important;
+    border-radius: var(--check-radius-card) !important;
+    box-shadow: none !important;
+  }
+
+  [data-theme="check"] :is(.bg-card, [class*="bg-card"]):hover {
+    box-shadow: var(--check-shadow-card) !important;
+  }
+
+  [data-theme="check"] input,
+  [data-theme="check"] textarea,
+  [data-theme="check"] select {
+    background: #ffffff !important;
+    border-color: var(--check-border-strong) !important;
+    border-radius: var(--check-radius-control) !important;
+    color: var(--check-text) !important;
+    box-shadow: var(--check-shadow-hairline) !important;
+  }
+
+  [data-theme="check"] input::placeholder,
+  [data-theme="check"] textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  [data-theme="check"] :is(
+    a[href],
+    button:not(:disabled),
+    select:not(:disabled),
+    summary,
+    [role="button"],
+    [role="link"],
+    [role="menuitem"],
+    [role="option"],
+    [role="tab"],
+    [role="radio"],
+    [role="checkbox"],
+    [role="switch"],
+    [aria-controls],
+    [aria-expanded],
+    [aria-pressed],
+    [aria-selected],
+    .cursor-pointer
+  ) {
+    cursor: pointer !important;
+  }
+
+  [data-theme="check"] :is(button:disabled, [aria-disabled="true"]) {
+    cursor: not-allowed !important;
+    opacity: 0.58 !important;
+  }
+
+  [data-theme="check"] :is(button, [role="button"], [role="tab"], [role="radio"], select, input, textarea) {
+    border-radius: var(--check-radius-control) !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  [data-theme="check"] :is(button, [role="button"], [role="tab"], [role="radio"]):not(:disabled) {
+    transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, transform 80ms ease !important;
+  }
+
+  [data-theme="check"] :is(button, [role="button"], [role="tab"], [role="radio"]):hover:not(:disabled) {
+    background-color: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  [data-theme="check"] :is(button, [role="button"], [role="tab"], [role="radio"]):active:not(:disabled) {
+    transform: translateY(1px) !important;
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.10) !important;
+  }
+
+  [data-theme="check"] :is(button, [role="button"], [role="tab"], [role="radio"]):focus-visible:not(:disabled),
+  [data-theme="check"] :is(a, input, textarea, select):focus-visible {
+    outline: 2px solid var(--check-primary) !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+  }
+
+  [data-theme="check"] button > .arc-border,
+  [data-theme="check"] button > .arc-border::before,
+  [data-theme="check"] [role="button"] > .arc-border,
+  [data-theme="check"] [role="button"] > .arc-border::before {
+    display: none !important;
+    opacity: 0 !important;
+    animation: none !important;
+    box-shadow: none !important;
+    background: none !important;
+  }
+
+  [data-theme="check"] button:has(> .arc-border),
+  [data-theme="check"] [role="button"]:has(> .arc-border) {
+    background: #ffffff !important;
+    border: 1px solid var(--check-border) !important;
+    color: var(--check-text) !important;
+  }
+
+  [data-theme="check"] [role="switch"],
+  [data-theme="check"] button[aria-checked] {
+    border-radius: var(--check-radius-pill) !important;
+  }
+
+  [data-theme="check"] [role="switch"] > span,
+  [data-theme="check"] button[aria-checked] > span {
+    border-radius: var(--check-radius-pill) !important;
+    aspect-ratio: 1 / 1 !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.16) !important;
+  }
+
+  [data-theme="check"] [class*="text-muted"],
+  [data-theme="check"] [class*="text-text-secondary"],
+  [data-theme="check"] [class*="text-text-tertiary"] {
+    color: var(--check-muted) !important;
+  }
+
+  [data-theme="check"] .text-success:not([class*="bg-success"]),
+  [data-theme="check"] [class*="text-success"]:not([class*="bg-success"]) {
+    color: var(--check-success) !important;
+  }
+
+  [data-theme="check"] .text-warning,
+  [data-theme="check"] [class*="text-warning"],
+  [data-theme="check"] [class*="text-amber"],
+  [data-theme="check"] [class*="text-yellow"] {
+    color: var(--check-warning) !important;
+  }
+
+  [data-theme="check"] .border-warning,
+  [data-theme="check"] [class*="border-warning"],
+  [data-theme="check"] [class*="border-amber"],
+  [data-theme="check"] [class*="border-yellow"] {
+    border-color: #fdba74 !important;
+  }
+
+  [data-theme="check"] .bg-warning,
+  [data-theme="check"] [class*="bg-warning"],
+  [data-theme="check"] [class*="bg-amber"],
+  [data-theme="check"] [class*="bg-yellow"] {
+    background: #fff7ed !important;
+  }
+
+  [data-theme="check"] span[class*="bg-success"],
+  [data-theme="check"] span[class*="bg-warning"],
+  [data-theme="check"] span[class*="bg-primary"],
+  [data-theme="check"] span[class*="bg-blue"],
+  [data-theme="check"] span[class*="bg-purple"],
+  [data-theme="check"] span[class*="bg-muted"],
+  [data-theme="check"] span[class*="border-midground"],
+  [data-theme="check"] [class*="badge"],
+  [data-theme="check"] [class*="Badge"] {
+    border-radius: var(--check-radius-pill) !important;
+    padding: 0.25rem 0.625rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  [data-theme="check"] span[class*="bg-success"] {
+    background: var(--check-success-soft) !important;
+    border: 1px solid #86efac !important;
+    color: #14532d !important;
+  }
+
+  [data-theme="check"] span[class*="bg-warning"] {
+    background: var(--check-warning-soft) !important;
+    border: 1px solid #fdba74 !important;
+    color: #9a3412 !important;
+  }
+
+  [data-theme="check"] span[class*="bg-primary"],
+  [data-theme="check"] span[class*="bg-blue"] {
+    background: var(--check-primary-soft) !important;
+    border: 1px solid #bfdbfe !important;
+    color: #1e3a8a !important;
+  }
+
+  [data-theme="check"] span[class*="bg-purple"] {
+    background: #f3e8ff !important;
+    border: 1px solid #e9d5ff !important;
+    color: #581c87 !important;
+  }
+
+  [data-theme="check"] span[class*="bg-muted"],
+  [data-theme="check"] span[class*="border-midground"] {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+  }
+
+  [data-theme="check"] code:not(pre code),
+  [data-theme="check"] .font-courier.truncate {
+    background: #f3f6fa !important;
+    border: 1px solid var(--check-border) !important;
+    border-radius: 0.5rem !important;
+    color: #0f172a !important;
+    opacity: 1 !important;
+    padding: 0.125rem 0.5rem !important;
+    font-weight: 600 !important;
+    line-height: 1.45 !important;
+  }
+
+  [data-theme="check"] input.font-mono,
+  [data-theme="check"] textarea.font-mono {
+    background: #f8fafc !important;
+    border-color: var(--check-border) !important;
+    color: var(--check-text) !important;
+  }
+
+  [data-theme="check"] [class*="bg-primary/10"],
+  [data-theme="check"] [class*="bg-sky"],
+  [data-theme="check"] [class*="bg-cyan"] {
+    background: #f8fafc !important;
+    border-color: var(--check-border) !important;
+    color: var(--check-text) !important;
+  }
+
+  [data-theme="check"] [class*="grid"] button[class*="font-mono"][class*="text-left"] {
+    border-radius: 0.5rem !important;
+    padding: 0.375rem 0.5rem !important;
+    margin-left: -0.5rem !important;
+  }
+
+  [data-theme="check"] [class*="grid"] button[class*="font-mono"][class*="text-left"]:hover {
+    background: var(--check-primary-softer) !important;
+    color: #1d4ed8 !important;
+    box-shadow: none !important;
+  }
+
+  [data-theme="check"] table,
+  [data-theme="check"] thead,
+  [data-theme="check"] tbody,
+  [data-theme="check"] tr {
+    border-color: var(--check-border) !important;
+  }
+
+  [data-theme="check"] th {
+    color: var(--check-muted) !important;
+    font-weight: 700 !important;
+  }
+
+  [data-theme="check"] ::selection {
+    background: #1e3a8a !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+  }
+
+  [data-theme="check"] ::-moz-selection {
+    background: #1e3a8a !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+  }
+
+  @media (max-width: 1023px) {
+    [data-theme="check"] #app-sidebar {
+      background: #ffffff !important;
+      border-color: var(--check-border) !important;
+      color: var(--check-text) !important;
+      backdrop-filter: none !important;
+    }
+
+    [data-theme="check"] #app-sidebar nav a,
+    [data-theme="check"] #app-sidebar button,
+    [data-theme="check"] #app-sidebar select,
+    [data-theme="check"] #app-sidebar [role="status"] {
+      color: var(--check-text) !important;
+    }
+  }
