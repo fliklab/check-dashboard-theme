@@ -12,6 +12,15 @@ Hermes Agent dashboard용 YAML 테마입니다.
 ```text
 dashboard-themes/
 └── check.yaml
+
+docs/
+└── check-theme-implementation-notes.md
+```
+
+구현 상세, selector별 영향 범위, 제작 중 발견한 문제와 해결 방식은 아래 문서에 정리했습니다.
+
+```text
+docs/check-theme-implementation-notes.md
 ```
 
 ## 적용 조건
